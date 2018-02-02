@@ -20,7 +20,6 @@ void hedge_pos_callback(const hedge_pos& pos) {
     tf::Quaternion q;
     q.setRPY(0, 0, 0);
     pos_transform.setRotation(q);
-    // ROS_INFO("send! \n");
 
     // check if base_coord is set
     if (!base_coord_set) {
@@ -65,18 +64,8 @@ int main(int argc, char** argv)
         base_coord_set = true;
     } 
 
-    // double rate = 10.0; // atof(argv[0]);
-    //std::cout << "Rate: " << rate << std::flush;
-    //ros::Rate loop_rate(atof(argv[0]));
-
-    // ros::Rate loop_rate(rate);
-    // while (ros::ok())
-    // {
-    // br->sendTransform(tf::StampedTransform(base_coord, ros::Time::now(), parentTfName.c_str(), "beacon_base"));
-
     ros::spin();
-    // loop_rate.sleep();
-    // }
+   
     return 0;
 }
 
